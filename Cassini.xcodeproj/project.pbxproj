@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75B97B441B31FDF600E51501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E3ED4F1B31E0DF0061A9C2 /* Main.storyboard */; };
 		75E3ED4C1B31E0DF0061A9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3ED4B1B31E0DF0061A9C2 /* AppDelegate.swift */; };
 		75E3ED4E1B31E0DF0061A9C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3ED4D1B31E0DF0061A9C2 /* ViewController.swift */; };
-		75E3ED511B31E0DF0061A9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E3ED4F1B31E0DF0061A9C2 /* Main.storyboard */; };
 		75E3ED531B31E0DF0061A9C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E3ED521B31E0DF0061A9C2 /* Images.xcassets */; };
 		75E3ED561B31E0DF0061A9C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E3ED541B31E0DF0061A9C2 /* LaunchScreen.xib */; };
 		75E3ED621B31E0E00061A9C2 /* CassiniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3ED611B31E0E00061A9C2 /* CassiniTests.swift */; };
+		75E3ED6C1B31E13E0061A9C2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3ED6B1B31E13E0061A9C2 /* ImageViewController.swift */; };
+		75E3ED6E1B31E55B0061A9C2 /* DemoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3ED6D1B31E55B0061A9C2 /* DemoURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		75E3ED5B1B31E0E00061A9C2 /* CassiniTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CassiniTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E3ED601B31E0E00061A9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75E3ED611B31E0E00061A9C2 /* CassiniTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CassiniTests.swift; sourceTree = "<group>"; };
+		75E3ED6B1B31E13E0061A9C2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		75E3ED6D1B31E55B0061A9C2 /* DemoURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +81,10 @@
 		75E3ED481B31E0DF0061A9C2 /* Cassini */ = {
 			isa = PBXGroup;
 			children = (
-				75E3ED4B1B31E0DF0061A9C2 /* AppDelegate.swift */,
 				75E3ED4D1B31E0DF0061A9C2 /* ViewController.swift */,
 				75E3ED4F1B31E0DF0061A9C2 /* Main.storyboard */,
-				75E3ED521B31E0DF0061A9C2 /* Images.xcassets */,
-				75E3ED541B31E0DF0061A9C2 /* LaunchScreen.xib */,
+				75E3ED6B1B31E13E0061A9C2 /* ImageViewController.swift */,
+				75E3ED6D1B31E55B0061A9C2 /* DemoURL.swift */,
 				75E3ED491B31E0DF0061A9C2 /* Supporting Files */,
 			);
 			path = Cassini;
@@ -90,6 +93,9 @@
 		75E3ED491B31E0DF0061A9C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				75E3ED521B31E0DF0061A9C2 /* Images.xcassets */,
+				75E3ED541B31E0DF0061A9C2 /* LaunchScreen.xib */,
+				75E3ED4B1B31E0DF0061A9C2 /* AppDelegate.swift */,
 				75E3ED4A1B31E0DF0061A9C2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -192,7 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E3ED511B31E0DF0061A9C2 /* Main.storyboard in Resources */,
+				75B97B441B31FDF600E51501 /* Main.storyboard in Resources */,
 				75E3ED561B31E0DF0061A9C2 /* LaunchScreen.xib in Resources */,
 				75E3ED531B31E0DF0061A9C2 /* Images.xcassets in Resources */,
 			);
@@ -212,7 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E3ED6E1B31E55B0061A9C2 /* DemoURL.swift in Sources */,
 				75E3ED4E1B31E0DF0061A9C2 /* ViewController.swift in Sources */,
+				75E3ED6C1B31E13E0061A9C2 /* ImageViewController.swift in Sources */,
 				75E3ED4C1B31E0DF0061A9C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +419,7 @@
 				75E3ED671B31E0E00061A9C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75E3ED681B31E0E00061A9C2 /* Build configuration list for PBXNativeTarget "CassiniTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +428,7 @@
 				75E3ED6A1B31E0E00061A9C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
