@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+class ImageViewController: UIViewController, UIScrollViewDelegate {
 
     // this MVC has a simple one-var model which is the image URL
     // so we just handle it here rather than in its own class
@@ -32,20 +32,31 @@ class ImageViewController: UIViewController {
     }
     private var imageView = UIImageView()
     
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.contentSize = imageView.frame.size
+            scrollView.delegate = self
+            scrollView.minimumZoomScale = 0.03
+            scrollView.maximumZoomScale = 1.0
+        }
+    }
+    
     private var image: UIImage? {
         get {return imageView.image}
         set {
             imageView.image=newValue
             imageView.sizeToFit()
+            scrollView?.contentSize = imageView.frame.size
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(imageView)
-        if imageURL == nil {
-            imageURL = DemoURL.Stanford
-        }
+        scrollView.addSubview(imageView)
     }
     
     // actually get the image data iff the view is going to be shown
