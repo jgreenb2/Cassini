@@ -20,14 +20,26 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     private func fetchImage() {
         if let url = imageURL {
-            let imageData = NSData(contentsOfURL: url)  // don't ever do a slow op like this in the main thread!
-            if imageData != nil {
-                image = UIImage(data: imageData!)
-            } else {
-                image = nil
+            spinner?.startAnimating()
+            let qos = Int(QOS_CLASS_USER_INITIATED.value) // legacy qos variable stuff
+            dispatch_async(dispatch_get_global_queue(qos, 0)) {
+                let imageData = NSData(contentsOfURL: url)
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    if url == self.imageURL {           // is captured url out of date?
+                        if imageData != nil {
+                            self.image = UIImage(data: imageData!)  // self needs explicit ref inside closure
+                        } else {
+                            self.image = nil
+                        }
+                    }
+                }
             }
+
         }
     }
     private var imageView = UIImageView()
@@ -51,6 +63,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             imageView.image=newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
         }
     }
     
